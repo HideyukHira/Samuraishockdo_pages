@@ -35,10 +35,13 @@ End Sub
 
 ## 手順２
 OUTLOOKのVBAエディターを開き、上記のマクロを書き込みます。
-Set MyItem = Application.CreateItemFromTemplate(&quot;C:\Users\username\AppData\Roaming\Microsoft\Templates\日報.oft&quot;)のパスの部分にさっき保存したテンプレートのパスを記入します。
+```
+Set MyItem = Application.CreateItemFromTemplate(&quot;C:\Users\username\AppData\Roaming\Microsoft\Templates\日報.oft&quot;)
+```
+のパスの部分にさっき保存したテンプレートのパスを記入します。
 作成はこれで終了です。  
 
-###【使い方】
+### 【使い方】
 開発＞マクロ から呼び出して使います。  
 自動で、件名と本文のyyyy/mm/ddが、今日の日付 2015/01/23 などに置換され入力された新規メールがあなたの目の前にあるはずです。  
 筆者はリボンのユーザー設定をカスタマイズして、すぐ使えるようリボンに表示させています。これで毎日の無駄な数十秒を節約  
@@ -78,8 +81,8 @@ MyItem.Body = Replace(MyItem.Body, &quot;置換対象文字列&quot;, &quot;置�
 ```
 をいろいろと付け足せば、本文のカスタマイズできると思います。
 ちなみに、OUTLOOK研究所さんの
-https://outlooklab.wordpress.com/2008/04/12/ テンプレートに自動で今日の日付を設定するマクロ
-を参考にしています。ほぼパクリじゃねえか？と思われると思われる方もいらっしゃると思いますが、なにとぞ穏便によろしくお願いいたします。
+[https://outlooklab.wordpress.com/2008/04/12/ テンプレートに自動で今日の日付を設定するマクロ](https://outlooklab.wordpress.com/2008/04/12/)
+を参考にしています。ほぼパクリじゃねえか？と思われると思われる方もいらっしゃると思いますが、なにとぞ穏便によろしくお願いいたします。  
 ## 追記：OUTLOOK豆知識
 Google　アドワーズのキーワードアドバイスツールに予測で出ていたキーワードをご紹介
 ## おうtぉおk
