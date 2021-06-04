@@ -18,11 +18,11 @@ title: OUTLOOKでテンプレートから自動で日付挿入
 Sub 日報()
     Dim MyItem As Outlook.MailItem
 
-    Set MyItem = Application.CreateItemFromTemplate(&quot;C:\Users\username\AppData\Roaming\Microsoft\Templates\日報.oft&quot;)
+    Set MyItem = Application.CreateItemFromTemplate("C:\Users\username\AppData\Roaming\Microsoft\Templates\日報.oft")
     MyItem.Display
     dtShort = FormatDateTime(Now, vbShortDate)
-    MyItem.Subject = Replace(MyItem.Subject, &quot;yyyy/mm/dd&quot;, dtShort)
-    MyItem.Body = Replace(MyItem.Body, &quot;yyyy/mm/dd&quot;, dtShort)
+    MyItem.Subject = Replace(MyItem.Subject, "yyyy/mm/dd", dtShort)
+    MyItem.Body = Replace(MyItem.Body, "yyyy/mm/dd", dtShort)
 End Sub
 ```
 ## 手順 １
@@ -36,7 +36,7 @@ End Sub
 ## 手順２
 OUTLOOKのVBAエディターを開き、上記のマクロを書き込みます。
 ```
-Set MyItem = Application.CreateItemFromTemplate(&quot;C:\Users\username\AppData\Roaming\Microsoft\Templates\日報.oft&quot;)
+Set MyItem = Application.CreateItemFromTemplate("C:\Users\username\AppData\Roaming\Microsoft\Templates\日報.oft")
 ```
 のパスの部分にさっき保存したテンプレートのパスを記入します。
 作成はこれで終了です。  
@@ -55,7 +55,7 @@ Dim MyItem As Outlook.MailItem
 ```
 オブジェクト型変数にSetを使って、Outlook テンプレート (.oft) から新しい Outlook アイテムを作成し、そのアイテムを代入すぞと言っています。()の中にはOutlook テンプレートのパスとファイル名を指定しております。
 ```
-Set MyItem = Application.CreateItemFromTemplate(&quot;C:\Users\username\AppData\Roaming\Microsoft\Templates\日報.oft&quot;)
+Set MyItem = Application.CreateItemFromTemplate("C:\Users\username\AppData\Roaming\Microsoft\Templates\日報.oft")
 ```
 テンプレートから新しくできたオブジェクト（新しくできたメール）を表示します。
 ```
@@ -66,18 +66,18 @@ dtshortの中身は、2015/01/23などのような形になっています。
 ```
 dtShort = FormatDateTime(Now, vbShortDate)
 ```
-メールの件名&nbsp;MyItem.Subject &nbsp;の &quot;yyyy/mm/dd&quot;を 上記のdtshort に置換・代入します。この部分で、件名に書かれている「yyyy/mm/dd」が、2015/01/23などの文字に入れ替わるという仕組みです。
+メールの件名&nbsp;MyItem.Subject &nbsp;の "yyyy/mm/dd"を 上記のdtshort に置換・代入します。この部分で、件名に書かれている「yyyy/mm/dd」が、2015/01/23などの文字に入れ替わるという仕組みです。
 ```
-MyItem.Subject = Replace(MyItem.Subject, &quot;yyyy/mm/dd&quot;, dtShort)
+MyItem.Subject = Replace(MyItem.Subject, "yyyy/mm/dd", dtShort)
 ```
 同じやり方で、メール本文MyItem.Bodyを置換・代入します。
 ```
-MyItem.Body = Replace(MyItem.Body, &quot;yyyy/mm/dd&quot;, dtShort)
+MyItem.Body = Replace(MyItem.Body, "yyyy/mm/dd", dtShort)
 ```
 というわけです。
 要はテンプレートにあらかじめ書いてあった文字を置換しているので、
 ```
-MyItem.Body = Replace(MyItem.Body, &quot;置換対象文字列&quot;, &quot;置換文字&quot;)
+MyItem.Body = Replace(MyItem.Body, "置換対象文字列", "置換文字")
 ```
 をいろいろと付け足せば、本文のカスタマイズできると思います。
 ちなみに、OUTLOOK研究所さんの
