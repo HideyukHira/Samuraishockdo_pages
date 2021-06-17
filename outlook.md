@@ -34,9 +34,7 @@ End Sub
 それを名前を付けて保存するのですが、この時「OUTLOOKテンプレート形式」を選択して保存します。  
 そして、保存先のファイルpathをメモ。  
 
-
-
-
+![outlook](https://pages.samuraishockdo.com/images/150123v3.jpg)  
 ## 手順２
 OUTLOOKのVBAエディターを開き、上記のマクロを書き込みます。
 ```
@@ -48,7 +46,12 @@ Set MyItem = Application.CreateItemFromTemplate("C:\Users\username\AppData\Roami
 ### 【使い方】
 開発＞マクロ から呼び出して使います。  
 自動で、件名と本文のyyyy/mm/ddが、今日の日付 2015/01/23 などに置換され入力された新規メールがあなたの目の前にあるはずです。  
-筆者はリボンのユーザー設定をカスタマイズして、すぐ使えるようリボンに表示させています。これで毎日の無駄な数十秒を節約  
+筆者はリボンのユーザー設定をカスタマイズして、すぐ使えるようリボンに表示させています。
+これで毎日の無駄な数十秒を節約  
+
+![outlook](https://pages.samuraishockdo.com/images/150123v1.jpg)  
+![outlook](https://pages.samuraishockdo.com/images/150123v2.jpg)  
+
 ### マクロの解説
 このマクロは、yyyy/mm/ddなど置換対象となる文字を、あらかじめOUTLOOKテンプレートファイルに書き込み保存しておいて、そのテンプレートから新規メールを作るときに、対象文字列を現在時刻に置換するというものです。  
 コードを見てみましょう。  
@@ -91,3 +94,5 @@ MyItem.Body = Replace(MyItem.Body, "置換対象文字列", "置換文字")
 Google　アドワーズのキーワードアドバイスツールに予測で出ていたキーワードをご紹介
 ## おうtぉおk
 見つけた時、笑っちゃいました！
+
+[HOME](index.md)
