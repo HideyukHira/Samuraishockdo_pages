@@ -35,11 +35,16 @@ NVIDIAのGPUドライバの最新版をインストール
 ダウンロード画面に  
 バージョン: R450 U5 (452.57) WHQL　などの表記があるので、452.57　部分をメモしておきます。  
 ダウンロードインストールします。  
+![](https://pages.samuraishockdo.com/images/tensor1.gif)  
+
 NVIDIAのCUDA TOOLKITの適切なバージョンを確認します  
 このページを見ます[https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)  
 CUDA Driver　の表を見ます。上記のGPUのドライバのバージョンだと452.57ですので  
 CUDA 11.0.3 Update 1 &gt;= 450.51.06 &gt;= 451.82  
 に当てはまることになり、CUDA 11.0.3 Update 1　以下であれば大丈夫なんだなと認識します。  
+
+![](https://pages.samuraishockdo.com/images/tensor2.gif)   
+
 ダウンロードはまだしません。対象バージョン「以下」って考え方がが大切かなと感じました。  
 ここで、自分のハードウェア環境とTensorflowとの相性を判定  
 TensorflowでGPUを認識させるには、  
@@ -55,6 +60,8 @@ Tensorflowを後からインストールするところが大切かなと思い�
 という前提のもと、[https://www.tensorflow.org/install/source#common_installation_problems](https://www.tensorflow.org/install/source#common_installation_problems)　を見ます。  
 ページは、LINUX用のソースからビルドするための情報ページですが、ここを参考にしました。  
 GPUのところを見ます。  
+![](https://pages.samuraishockdo.com/images/tensor3.gif)      
+  
 当方環境の場合、CUDA 11.0.3 Update 1　まで可能なので、CUDAのバージョンが最も新しいものを選択すると  
 一番上の  
 * tensorflow-2.1.0
@@ -203,6 +210,7 @@ device_lib.list_local_devices()
  physical_device_desc: "device: 0, name: GeForce GTX 1660 SUPER, pci bus id: 0000:01:00.0, compute capability: 7.5"]
 ```
 のような情報が出力されます。この中にGPUというもブロックがあればGPUを認識しています。
+![](https://pages.samuraishockdo.com/images/tensor4.gif)      
 
 ## 感想
 最初、Anaconda環境を作成後、`conda install Tensorflow`でインストールしたあとに、CUDA周りをインストールしたのですが、バージョンが合わずGPUを確認できませんでした。  
