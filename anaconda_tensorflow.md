@@ -216,11 +216,14 @@ device_lib.list_local_devices()
 最初、Anaconda環境を作成後、`conda install Tensorflow`でインストールしたあとに、CUDA周りをインストールしたのですが、バージョンが合わずGPUを確認できませんでした。  
 ### GPUドライバ最新インストール
 1. GPUバージョン確認
-1. CUDA, cuDNN, tensorflow GPUの組み合わせを確認・メモ　[https://www.tensorflow.org/install/source](https://www.tensorflow.org/install/source) 
-1. Visual studio 2019のビルドツールインストール 
-1. CUDA toolkit インストール  
-1. cuDNN　インストール  
-1. Anaconda環境　Pythonのバージョン合わせて作成  
-1. `conda search tensorflow` してからのバージョン指定インストール  
+2. CUDA, cuDNN, tensorflow GPUの組み合わせを確認・メモ　[https://www.tensorflow.org/install/source](https://www.tensorflow.org/install/source) 
+3. Visual studio 2019のビルドツールインストール 
+4. CUDA toolkit インストール  
+5. cuDNN　インストール  
+6. Anaconda環境　Pythonのバージョン合わせて作成  
+7. `conda search tensorflow` してからのバージョン指定インストール  
 が近道かなと思います。  
-cuDNNのインストールや、Visual studio 2019のビルドツールのインストール部分などの具体的な部分は検索するとたくさん情報があるので、割愛させていただきました。
+cuDNNのインストールや、Visual studio 2019のビルドツールのインストール部分などの具体的な部分は検索するとたくさん情報があるので、割愛させていただきました。  
+
+[HOME](index.md)
+ 
